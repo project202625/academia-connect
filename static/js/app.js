@@ -10,7 +10,7 @@ window.SkillBridgeApp = {
 
   init: async function() {
     console.log("SkillBridge AI Initializing...");
-    const savedTheme = localStorage.getItem('sb_theme') || 'default';
+    const savedTheme = localStorage.getItem('sb_theme') || 'dark';
     this.setTheme(savedTheme, false);
     await this.loadUsers();
     this.setupEventListeners();
