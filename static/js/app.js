@@ -59,14 +59,16 @@ window.SkillBridgeApp = {
   },
 
   setTheme: function(themeName, showToast = true) {
-    document.body.classList.remove('theme-pearl', 'theme-warm', 'theme-dark');
+    if (themeName === 'slate') themeName = 'dark';
+    document.body.classList.remove('theme-pearl', 'theme-warm', 'theme-dark', 'theme-slate');
     if (themeName !== 'default') {
       document.body.classList.add(`theme-${themeName}`);
+      if (themeName === 'dark') document.body.classList.add('theme-slate');
     }
     localStorage.setItem('sb_theme', themeName);
     if (showToast) {
-      const names = { default: 'Realistic Canvas', pearl: 'Clean Pearl White', warm: 'Warm Editorial', dark: 'Executive Dark Slate' };
-      this.showToast(`Background set to ${names[themeName] || themeName}`, 'info');
+      const names = { default: 'Architectural Canvas', pearl: 'Clean Pearl White', warm: 'Warm Editorial', dark: 'Executive Dark Mode' };
+      this.showToast(`Theme set to ${names[themeName] || themeName}`, 'info');
     }
   },
 
