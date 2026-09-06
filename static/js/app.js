@@ -71,32 +71,32 @@ window.SkillBridgeApp = {
   },
 
   loadUsers: async function() {
+    const fallbackUsers = [
+      { id: "stu_001", name: "Aarav Sharma", role: "student", major: "Computer Science", college: "IIT Bombay" },
+      { id: "stu_002", name: "Priya Patel", role: "student", major: "Data Science", college: "NIT Trichy" },
+      { id: "rec_001", name: "Vikram Malhotra", role: "recruiter", company: "Infosys NextGen" },
+      { id: "tpo_001", name: "Dr. Sunita Rao", role: "tpo", college: "IIT Bombay" },
+      { id: "gov_001", name: "SIH Evaluator Panel", role: "admin", department: "Ministry of Education" }
+    ];
+
     try {
       const res = await fetch('/api/users');
-      const data = await res.json();
-      this.usersList = data.users;
-
-      // Populate header user selector
-      const select = document.getElementById('global-user-switcher');
-      if (select) {
-        select.innerHTML = this.usersList.map(u => {
-          let roleEmoji = '👨‍🎓';
-          if (u.role === 'recruiter') roleEmoji = '🏢';
-          else if (u.role === 'tpo') roleEmoji = '🏛️';
-          else if (u.role === 'admin') roleEmoji = '🇮🇳';
-
-          return `<option value="${u.id}">${roleEmoji} ${u.name} (${u.role.toUpperCase()})</option>`;
-        }).join('');
-
-        // Default to first user (Aarav Sharma - Student)
-        this.currentUser = this.usersList[0];
-        select.value = this.currentUser.id;
+      if (res.ok) {
+        const data = await res.json();
+        this.usersList = data.users || fallbackUsers;
+      } else {
+        this.usersList = fallbackUsers;
       }
-
-      this.renderCurrentView();
     } catch (err) {
-      console.error("Failed to load users:", err);
-      this.showToast("Failed to initialize user session", "error");
+      this.usersList = fallbackUsers;
+    }
+
+    // Default to first user (Aarav Sharma - Student)
+    this.currentUser = this.usersList[0];
+
+    const select = document.getElementById('persona-select');
+    if (select) {
+      select.value = this.currentUser.id;
     }
   },
 
