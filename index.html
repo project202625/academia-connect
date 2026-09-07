@@ -104,16 +104,15 @@
           </button>
         </div>
 
-        <!-- Persona Switcher Dropdown -->
+        <!-- Student Skill Actions Dropdown -->
         <div class="relative">
-          <select id="persona-select" onchange="SkillBridgeApp.switchUser(this.value)" class="bg-white border-2 border-indigo-500 text-indigo-950 text-xs font-black rounded-2xl px-3 py-2 shadow-sm focus:ring-4 focus:ring-indigo-100 cursor-pointer outline-none">
-            <optgroup label="Live Switch Persona">
-              <option value="stu_001" selected>👤 Student (Aarav Sharma)</option>
-              <option value="stu_002">👤 Student (Priya Patel)</option>
-              <option value="rec_001">🏢 Recruiter (Infosys NextGen)</option>
-              <option value="tpo_001">🎓 TPO Officer (IIT Bombay)</option>
-              <option value="gov_001">🏛️ Admin / SIH Evaluator</option>
-            </optgroup>
+          <select id="student-skill-actions" onchange="SkillBridgeApp.handleSkillAction(this.value); this.value='';" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-black rounded-2xl px-4 py-2.5 shadow-md shadow-indigo-900/50 cursor-pointer outline-none transition border border-indigo-400/40">
+            <option value="" disabled selected>👤 Student (Enter Skills & Actions) ▾</option>
+            <option value="enter_skill" class="bg-slate-900 text-white">➕ Enter / Add New Skill</option>
+            <option value="take_test" class="bg-slate-900 text-white">📝 Take Technical Skill Test</option>
+            <option value="resume_scanner" class="bg-slate-900 text-white">📄 AI Resume Skill Scanner</option>
+            <option value="skill_passport" class="bg-slate-900 text-white">🎓 Digital Skill Passport</option>
+            <option value="gap_simulator" class="bg-slate-900 text-white">📊 Skill Gap & Employability Simulator</option>
           </select>
         </div>
 

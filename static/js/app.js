@@ -922,6 +922,165 @@ Projects:
     }
   },
 
+  handleSkillAction: function(action) {
+    if (!action) return;
+    if (action === 'enter_skill') {
+      this.openEnterSkillsModal();
+    } else if (action === 'take_test') {
+      this.openQuizModal(1);
+    } else if (action === 'resume_scanner') {
+      this.openResumeParserModal();
+    } else if (action === 'skill_passport') {
+      this.openPassportModal(1);
+    } else if (action === 'gap_simulator') {
+      this.openInteractiveSimulator();
+    }
+  },
+
+  openEnterSkillsModal: function() {
+    const modal = document.getElementById('modal-container');
+    const content = document.getElementById('modal-content');
+
+    const popularSkills = [
+      "Python & Data Structures",
+      "React & Modern Web UI",
+      "REST API & FastAPI",
+      "Docker & Cloud Deploy",
+      "SQL & PostgreSQL",
+      "Machine Learning & PyTorch",
+      "Node.js & Express",
+      "TypeScript & Web Dev",
+      "AWS & Cloud Architecture",
+      "Java & Spring Boot",
+      "C++ & Algorithms",
+      "System Design & Scalability",
+      "Cybersecurity Essentials",
+      "Git & GitHub Actions CI/CD"
+    ];
+
+    content.innerHTML = `
+      <div class="relative bg-[#0f172a] rounded-3xl p-8 max-w-lg w-full mx-4 shadow-2xl border border-slate-700 text-slate-100">
+        <button onclick="SkillBridgeApp.closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
+            <i data-lucide="plus-circle" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-black uppercase text-indigo-400 tracking-wider">Student Profile Entry</span>
+            <h3 class="text-xl font-black text-white">Enter / Add Student Skill</h3>
+          </div>
+        </div>
+
+        <form onsubmit="SkillBridgeApp.submitNewSkill(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 mb-1">Select Skill or Type Custom Name:</label>
+            <input id="skill-name-input" type="text" list="popular-skills-list" placeholder="e.g. FastAPI, PyTorch, React, Docker..." required class="w-full text-xs p-3 rounded-xl border border-slate-700 bg-slate-800 text-white focus:ring-2 focus:ring-indigo-500 outline-none">
+            <datalist id="popular-skills-list">
+              ${popularSkills.map(sk => `<option value="${sk}">`).join('')}
+            </datalist>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Category:</label>
+              <select id="skill-category-input" class="w-full text-xs p-3 rounded-xl border border-slate-700 bg-slate-800 text-white focus:ring-2 focus:ring-indigo-500 outline-none">
+                <option value="Core">Core Programming</option>
+                <option value="Frontend">Frontend Web</option>
+                <option value="Backend">Backend / API</option>
+                <option value="DevOps">DevOps & Cloud</option>
+                <option value="AI/ML">AI & Machine Learning</option>
+                <option value="Database">Database & Data</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Status:</label>
+              <select id="skill-verified-input" class="w-full text-xs p-3 rounded-xl border border-slate-700 bg-slate-800 text-white focus:ring-2 focus:ring-indigo-500 outline-none">
+                <option value="true">✓ Verified (Coursework / Project)</option>
+                <option value="false">⏳ Self-Assessed (In Progress)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <label class="text-xs font-bold text-slate-300">Proficiency Level:</label>
+              <span id="proficiency-val-badge" class="text-xs font-bold text-indigo-400 bg-indigo-500/20 px-2.5 py-0.5 rounded-full border border-indigo-500/30">75% (Proficient)</span>
+            </div>
+            <input id="skill-proficiency-slider" type="range" min="10" max="100" value="75" step="5" oninput="SkillBridgeApp.updateSkillProficiencyLabel(this.value)" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+            <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+              <span>Novice (10%)</span>
+              <span>Intermediate (50%)</span>
+              <span>Advanced (90%+)</span>
+            </div>
+          </div>
+
+          <div class="pt-2 flex items-center justify-end gap-3">
+            <button type="button" onclick="SkillBridgeApp.closeModal()" class="px-4 py-2.5 rounded-xl text-xs font-bold border border-slate-700 text-slate-300 hover:bg-slate-800">
+              Cancel
+            </button>
+            <button type="submit" class="px-5 py-2.5 rounded-xl text-xs font-black bg-indigo-600 hover:bg-indigo-500 text-white shadow-md flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4"></i> Save &amp; Add Skill to Profile →
+            </button>
+          </div>
+        </form>
+      </div>
+    `;
+
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    lucide.createIcons();
+  },
+
+  updateSkillProficiencyLabel: function(val) {
+    const badge = document.getElementById('proficiency-val-badge');
+    if (!badge) return;
+    let level = "Novice";
+    if (val >= 80) level = "Advanced";
+    else if (val >= 60) level = "Proficient";
+    else if (val >= 40) level = "Intermediate";
+    badge.textContent = `${val}% (${level})`;
+  },
+
+  submitNewSkill: function(event) {
+    event.preventDefault();
+    const name = document.getElementById('skill-name-input').value.trim();
+    const category = document.getElementById('skill-category-input').value;
+    const verified = document.getElementById('skill-verified-input').value === 'true';
+    const proficiency = parseInt(document.getElementById('skill-proficiency-slider').value);
+
+    if (!name) return;
+
+    let level = "Novice";
+    if (proficiency >= 80) level = "Advanced";
+    else if (proficiency >= 60) level = "Proficient";
+    else if (proficiency >= 40) level = "Intermediate";
+
+    const newSkill = {
+      id: Date.now(),
+      name: name,
+      proficiency: proficiency,
+      category: category,
+      verified: verified,
+      level: level
+    };
+
+    if (WixViews && WixViews.fallbackStudentData) {
+      const existingIdx = WixViews.fallbackStudentData.skills.findIndex(s => s.name.toLowerCase() === name.toLowerCase());
+      if (existingIdx >= 0) {
+        WixViews.fallbackStudentData.skills[existingIdx] = newSkill;
+      } else {
+        WixViews.fallbackStudentData.skills.push(newSkill);
+      }
+    }
+
+    this.closeModal();
+    this.showToast(`✨ Skill '${name}' (${proficiency}%) added to your profile!`, "success");
+    this.navigateTo('student-dashboard');
+  },
+
   showToast: function(message, type = 'info') {
     const container = document.getElementById('toast-container');
     if (!container) return;

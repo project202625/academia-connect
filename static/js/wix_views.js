@@ -1,8 +1,7 @@
 /**
- * SkillBridge AI - Wix Views Renderer
- * Matches exact design, copy, sections, and forms from:
- * https://vedhagariga896.wixsite.com/skillbridge
- * Enhanced with full interactive student skill tests, skill profiles, gap analysis, recommended learning, and 1-click internship applications.
+ * SkillBridge AI - Wix Views Renderer (Dark Mode Edition)
+ * Portal for Academia - Industry Collaboration for Skill Mapping, Internships & Placement
+ * All views are fully dark-mode styled, work offline with fallback data.
  */
 
 window.WixViews = {
@@ -72,22 +71,23 @@ window.WixViews = {
   renderHome: function(container) {
     container.innerHTML = `
       <!-- Hero Section -->
-      <div class="glass-panel rounded-3xl p-8 md:p-14 mb-10 bg-white border border-slate-200 text-center relative overflow-hidden">
-        <div class="max-w-3xl mx-auto">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-indigo-50 text-indigo-700 border border-indigo-200 mb-6">
+      <div class="rounded-3xl p-8 md:p-14 mb-10 bg-gradient-to-br from-[#0f172a] to-[#1e1b4b] border border-indigo-900/50 text-center relative overflow-hidden shadow-2xl">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(99,102,241,0.15),_transparent_70%)]"></div>
+        <div class="max-w-3xl mx-auto relative">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 mb-6">
             🎓 ACADEMIA - INDUSTRY PLATFORM
           </span>
-          <h1 class="text-3xl md:text-5xl font-display font-black text-slate-900 tracking-tight leading-tight mb-4">
+          <h1 class="text-3xl md:text-5xl font-display font-black text-white tracking-tight leading-tight mb-4">
             Connecting Students, Colleges &amp; Industry Through Skills
           </h1>
-          <p class="text-base md:text-lg text-slate-600 font-medium leading-relaxed mb-8">
+          <p class="text-base md:text-lg text-slate-300 font-medium leading-relaxed mb-8">
             Empowering the next generation of talent by bridging the gap between academic potential and industry demand.
           </p>
           <div class="flex flex-wrap items-center justify-center gap-4">
-            <button onclick="SkillBridgeApp.navigateTo('student-dashboard')" class="px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-md shadow-indigo-200 transition">
+            <button onclick="SkillBridgeApp.navigateTo('student-dashboard')" class="px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-lg shadow-indigo-900/50 transition">
               Explore Student Portal →
             </button>
-            <button onclick="SkillBridgeApp.navigateTo('company-dashboard')" class="px-6 py-3 rounded-2xl border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-sm transition">
+            <button onclick="SkillBridgeApp.navigateTo('company-dashboard')" class="px-6 py-3 rounded-2xl border border-slate-600 hover:border-slate-400 hover:bg-slate-800 text-slate-300 font-bold text-sm transition">
               Post an Opportunity
             </button>
           </div>
@@ -95,10 +95,10 @@ window.WixViews = {
       </div>
 
       <!-- Our Mission -->
-      <div class="glass-panel rounded-3xl p-8 mb-10 bg-slate-900 text-white">
+      <div class="rounded-3xl p-8 mb-10 bg-[#0f172a] border border-slate-800">
         <div class="max-w-3xl mx-auto text-center">
           <span class="text-xs font-black uppercase tracking-wider text-indigo-400 block mb-2">Connecting Academia to Industry</span>
-          <h2 class="text-2xl md:text-3xl font-bold font-display mb-4">Our Mission</h2>
+          <h2 class="text-2xl md:text-3xl font-bold font-display text-white mb-4">Our Mission</h2>
           <p class="text-slate-300 text-sm md:text-base leading-relaxed">
             SkillBridge serves as the critical bridge between academic theory and industry practice. We empower students to identify skill gaps, access targeted learning resources, and secure internships that align perfectly with their career aspirations.
           </p>
@@ -108,59 +108,74 @@ window.WixViews = {
       <!-- 3 Stakeholder Cards -->
       <div class="mb-12">
         <div class="text-center mb-8">
-          <h2 class="text-2xl font-black font-display text-slate-900">Connect with SkillBridge</h2>
-          <p class="text-xs text-slate-500 font-medium mt-1">Dedicated portals for every stakeholder in the education-employment ecosystem</p>
+          <h2 class="text-2xl font-black font-display text-white">Connect with SkillBridge</h2>
+          <p class="text-xs text-slate-400 font-medium mt-1">Dedicated portals for every stakeholder in the education-employment ecosystem</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- Students Card -->
-          <div class="glass-panel rounded-3xl p-6 bg-white border border-slate-200 flex flex-col justify-between hover:shadow-lg transition">
+          <div class="rounded-3xl p-6 bg-[#0f172a] border border-slate-800 hover:border-indigo-700/60 flex flex-col justify-between hover:shadow-xl hover:shadow-indigo-950/40 transition">
             <div>
-              <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-4 border border-indigo-500/30">
                 <i data-lucide="graduation-cap" class="w-6 h-6"></i>
               </div>
-              <h3 class="font-bold text-lg text-slate-900 mb-2">Students</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-6">
+              <h3 class="font-bold text-lg text-white mb-2">Students</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-6">
                 Take skill tests, identify your skill gaps, learn the missing skills with AI recommendations, and apply for matching internships.
               </p>
             </div>
-            <button onclick="SkillBridgeApp.navigateTo('student-dashboard')" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm transition">
+            <button onclick="SkillBridgeApp.navigateTo('student-dashboard')" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-sm transition">
               Open Student Portal →
             </button>
           </div>
 
           <!-- Companies Card -->
-          <div class="glass-panel rounded-3xl p-6 bg-white border border-slate-200 flex flex-col justify-between hover:shadow-lg transition">
+          <div class="rounded-3xl p-6 bg-[#0f172a] border border-slate-800 hover:border-amber-700/60 flex flex-col justify-between hover:shadow-xl hover:shadow-amber-950/30 transition">
             <div>
-              <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4 border border-amber-500/30">
                 <i data-lucide="building-2" class="w-6 h-6"></i>
               </div>
-              <h3 class="font-bold text-lg text-slate-900 mb-2">Companies</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-6">
+              <h3 class="font-bold text-lg text-white mb-2">Companies</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-6">
                 Post jobs, find top talent, and streamline your recruitment process with our advanced candidate matching and skill analysis tools.
               </p>
             </div>
-            <button onclick="SkillBridgeApp.navigateTo('company-dashboard')" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs shadow-sm transition">
+            <button onclick="SkillBridgeApp.navigateTo('company-dashboard')" class="w-full py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs shadow-sm transition">
               Post a Job →
             </button>
           </div>
 
           <!-- Colleges Card -->
-          <div class="glass-panel rounded-3xl p-6 bg-white border border-slate-200 flex flex-col justify-between hover:shadow-lg transition">
+          <div class="rounded-3xl p-6 bg-[#0f172a] border border-slate-800 hover:border-emerald-700/60 flex flex-col justify-between hover:shadow-xl hover:shadow-emerald-950/30 transition">
             <div>
-              <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-500/30">
                 <i data-lucide="school" class="w-6 h-6"></i>
               </div>
-              <h3 class="font-bold text-lg text-slate-900 mb-2">Colleges</h3>
-              <p class="text-xs text-slate-600 leading-relaxed mb-6">
+              <h3 class="font-bold text-lg text-white mb-2">Colleges</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-6">
                 Track student progress, identify skill gaps, and boost placement rates with comprehensive reports and industry-aligned training programs.
               </p>
             </div>
-            <button onclick="SkillBridgeApp.navigateTo('college-dashboard')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm transition">
+            <button onclick="SkillBridgeApp.navigateTo('college-dashboard')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-sm transition">
               View Reports →
             </button>
           </div>
         </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        ${[
+          { value: "12,000+", label: "Students Mapped", color: "text-indigo-400" },
+          { value: "340+", label: "Industry Partners", color: "text-amber-400" },
+          { value: "78%", label: "Placement Rate", color: "text-emerald-400" },
+          { value: "3.2x", label: "Faster Hiring", color: "text-rose-400" }
+        ].map(s => `
+          <div class="rounded-2xl p-5 bg-[#0f172a] border border-slate-800 text-center">
+            <div class="text-3xl font-black ${s.color}">${s.value}</div>
+            <div class="text-xs text-slate-400 mt-1 font-medium">${s.label}</div>
+          </div>
+        `).join('')}
       </div>
     `;
     lucide.createIcons();
@@ -182,18 +197,19 @@ window.WixViews = {
 
     container.innerHTML = `
       <!-- Student Skill Profile Hero Header -->
-      <div class="glass-panel rounded-3xl p-6 md:p-8 mb-8 bg-white border border-slate-200 flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative overflow-hidden">
-        <div class="flex items-center gap-5">
+      <div class="rounded-3xl p-6 md:p-8 mb-8 bg-gradient-to-br from-[#0f172a] to-[#1e1b4b] border border-indigo-900/40 flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative overflow-hidden shadow-xl">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(99,102,241,0.12),_transparent_60%)]"></div>
+        <div class="flex items-center gap-5 relative">
           <div class="relative">
-            <img src="${data.profile.avatar}" class="w-20 h-20 rounded-2xl object-cover ring-4 ring-indigo-500/20 shadow-md" alt="Avatar">
+            <img src="${data.profile.avatar}" class="w-20 h-20 rounded-2xl object-cover ring-4 ring-indigo-500/30 shadow-md" alt="Avatar">
             <span class="absolute -bottom-1 -right-1 p-1 bg-emerald-500 rounded-full text-white ring-2 ring-[#080c14]" title="NEP-2020 Verified">
               <i data-lucide="check" class="w-3.5 h-3.5"></i>
             </span>
           </div>
           <div>
             <div class="flex flex-wrap items-center gap-2 mb-1">
-              <h2 class="text-2xl md:text-3xl font-black text-slate-900">${data.profile.name}</h2>
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+              <h2 class="text-2xl md:text-3xl font-black text-white">${data.profile.name}</h2>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                 AICTE NEP-2020 Verified
               </span>
             </div>
@@ -207,28 +223,28 @@ window.WixViews = {
         </div>
 
         <!-- Action Quick-Tools -->
-        <div class="flex flex-wrap items-center gap-3">
-          <button onclick="SkillBridgeApp.openQuizModal(1)" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-500/20 transition flex items-center gap-2">
+        <div class="flex flex-wrap items-center gap-3 relative">
+          <button onclick="SkillBridgeApp.openQuizModal(1)" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md shadow-indigo-900/50 transition flex items-center gap-2">
             <i data-lucide="brain-circuit" class="w-4 h-4"></i> Take Skill Test
           </button>
-          <button onclick="SkillBridgeApp.openPassportModal(1)" class="px-4 py-2.5 rounded-xl border border-slate-300 text-slate-300 hover:text-white font-bold text-xs transition flex items-center gap-2">
+          <button onclick="SkillBridgeApp.openPassportModal(1)" class="px-4 py-2.5 rounded-xl border border-slate-600 text-slate-300 hover:text-white hover:border-slate-400 font-bold text-xs transition flex items-center gap-2">
             <i data-lucide="award" class="w-4 h-4 text-amber-400"></i> Skill Passport
           </button>
-          <button onclick="SkillBridgeApp.openResumeParserModal()" class="px-4 py-2.5 rounded-xl border border-slate-300 text-slate-300 hover:text-white font-bold text-xs transition flex items-center gap-2">
+          <button onclick="SkillBridgeApp.openResumeParserModal()" class="px-4 py-2.5 rounded-xl border border-slate-600 text-slate-300 hover:text-white hover:border-slate-400 font-bold text-xs transition flex items-center gap-2">
             <i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i> AI Resume Auto-Sync
           </button>
         </div>
       </div>
 
       <!-- SECTION 1: VERIFIED SKILL PROFILE & TEST ACCESS (CLICK ANY SKILL TO TEST) -->
-      <div class="glass-panel rounded-3xl p-6 md:p-8 mb-8 bg-white border border-slate-200">
+      <div class="rounded-3xl p-6 md:p-8 mb-8 bg-[#0f172a] border border-slate-800">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
           <div>
-            <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
-              <i data-lucide="award" class="w-5 h-5 text-indigo-500"></i> Verified Skill Profile
+            <h3 class="text-lg font-black text-white flex items-center gap-2">
+              <i data-lucide="award" class="w-5 h-5 text-indigo-400"></i> Verified Skill Profile
             </h3>
-            <p class="text-xs text-slate-400">
-              Click on any skill card below to <strong>take a technical assessment test</strong> and level up your verified badge.
+            <p class="text-xs text-slate-400 mt-1">
+              Click on any skill card below to <strong class="text-slate-200">take a technical assessment test</strong> and level up your verified badge.
             </p>
           </div>
           <button onclick="SkillBridgeApp.openQuizModal(1)" class="px-3.5 py-1.5 rounded-xl bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500/30 border border-indigo-500/30 text-xs font-bold transition flex items-center gap-1.5">
@@ -238,19 +254,19 @@ window.WixViews = {
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           ${data.skills.map(s => `
-            <div onclick="SkillBridgeApp.openQuizModal(${s.id})" class="p-4 rounded-2xl border border-slate-200 bg-slate-50/50 hover:border-indigo-500/60 hover:scale-[1.02] cursor-pointer transition flex flex-col justify-between group">
+            <div onclick="SkillBridgeApp.openQuizModal(${s.id})" class="p-4 rounded-2xl border border-slate-700 bg-slate-800/50 hover:border-indigo-500/60 hover:bg-slate-800 hover:scale-[1.02] cursor-pointer transition flex flex-col justify-between group">
               <div>
                 <div class="flex items-center justify-between mb-2">
-                  <span class="font-bold text-sm text-slate-900 group-hover:text-indigo-400 transition">${s.name}</span>
-                  <span class="px-2 py-0.5 rounded-full text-[10px] font-black ${s.verified ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                  <span class="font-bold text-sm text-slate-100 group-hover:text-indigo-300 transition">${s.name}</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-black ${s.verified ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'}">
                     ${s.verified ? '✓ Verified' : 'Take Test'}
                   </span>
                 </div>
-                <div class="w-full bg-slate-700/40 rounded-full h-2 mb-2">
+                <div class="w-full bg-slate-700 rounded-full h-2 mb-2">
                   <div class="${s.proficiency >= 75 ? 'bg-indigo-500' : s.proficiency >= 50 ? 'bg-amber-500' : 'bg-rose-500'} h-2 rounded-full transition-all duration-500" style="width: ${s.proficiency}%"></div>
                 </div>
               </div>
-              <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2 pt-2 border-t border-slate-800">
+              <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2 pt-2 border-t border-slate-700">
                 <span>Proficiency: <strong class="text-slate-200">${s.proficiency}%</strong> (${s.level})</span>
                 <span class="text-indigo-400 font-bold group-hover:underline flex items-center gap-1">
                   Start Quiz <i data-lucide="chevron-right" class="w-3 h-3"></i>
@@ -262,14 +278,14 @@ window.WixViews = {
       </div>
 
       <!-- SECTION 2: AI SKILL GAP ANALYSIS & TARGET BENCHMARK -->
-      <div class="glass-panel rounded-3xl p-6 md:p-8 mb-8 bg-white border border-slate-200">
+      <div class="rounded-3xl p-6 md:p-8 mb-8 bg-[#0f172a] border border-slate-800">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
-            <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
-              <i data-lucide="target" class="w-5 h-5 text-emerald-500"></i> AI Skill Gap Analysis
+            <h3 class="text-lg font-black text-white flex items-center gap-2">
+              <i data-lucide="target" class="w-5 h-5 text-emerald-400"></i> AI Skill Gap Analysis
             </h3>
-            <p class="text-xs text-slate-400">
-              Benchmark comparison against tier-1 recruiters for <strong>Full Stack &amp; Cloud Developer</strong>
+            <p class="text-xs text-slate-400 mt-1">
+              Benchmark comparison against tier-1 recruiters for <strong class="text-slate-200">Full Stack &amp; Cloud Developer</strong>
             </p>
           </div>
           <button onclick="SkillBridgeApp.openInteractiveSimulator()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition flex items-center gap-2">
@@ -281,10 +297,10 @@ window.WixViews = {
           ${data.skill_gaps.map(sg => {
             const isAvail = sg.status === 'Available';
             return `
-              <div class="p-4 rounded-2xl border ${isAvail ? 'bg-emerald-950/20 border-emerald-500/30' : 'bg-rose-950/20 border-rose-500/30'} flex flex-col justify-between">
+              <div class="p-4 rounded-2xl border ${isAvail ? 'bg-emerald-950/30 border-emerald-600/30' : 'bg-rose-950/30 border-rose-600/30'} flex flex-col justify-between">
                 <div>
                   <div class="flex justify-between items-start mb-2">
-                    <span class="font-bold text-sm text-slate-900">${sg.skill}</span>
+                    <span class="font-bold text-sm text-slate-100">${sg.skill}</span>
                     <span class="px-2 py-0.5 rounded-full text-[10px] font-black ${isAvail ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'}">
                       ${sg.status}
                     </span>
@@ -305,7 +321,7 @@ window.WixViews = {
           }).join('')}
         </div>
 
-        <div class="p-4 rounded-2xl bg-indigo-950/30 border border-indigo-500/30 flex items-center justify-between gap-4">
+        <div class="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-700/30 flex items-center justify-between gap-4">
           <div class="flex items-center gap-3">
             <i data-lucide="zap" class="w-5 h-5 text-amber-400"></i>
             <div>
@@ -313,35 +329,35 @@ window.WixViews = {
               <p class="text-[11px] text-slate-400">Mastering REST API and Docker will raise your match score to 96% across tier-1 recruiters.</p>
             </div>
           </div>
-          <button onclick="SkillBridgeApp.openInteractiveSimulator()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm transition whitespace-nowrap">
+          <button onclick="SkillBridgeApp.openInteractiveSimulator()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-sm transition whitespace-nowrap">
             Simulate Improvement →
           </button>
         </div>
       </div>
 
       <!-- SECTION 3: RECOMMENDED LEARNING PATHS -->
-      <div class="glass-panel rounded-3xl p-6 md:p-8 mb-8 bg-white border border-slate-200">
+      <div class="rounded-3xl p-6 md:p-8 mb-8 bg-[#0f172a] border border-slate-800">
         <div class="mb-6">
-          <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
-            <i data-lucide="compass" class="w-5 h-5 text-amber-500"></i> Recommended Learning Paths
+          <h3 class="text-lg font-black text-white flex items-center gap-2">
+            <i data-lucide="compass" class="w-5 h-5 text-amber-400"></i> Recommended Learning Paths
           </h3>
-          <p class="text-xs text-slate-400">
+          <p class="text-xs text-slate-400 mt-1">
             Curated resources automatically matched by AI to bridge your detected skill deficits.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           ${data.learning_path.map(lp => `
-            <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 flex flex-col justify-between hover:border-indigo-500/40 transition">
+            <div class="p-5 rounded-2xl border border-slate-700 bg-slate-800/50 flex flex-col justify-between hover:border-indigo-500/50 hover:bg-slate-800 transition">
               <div>
                 <div class="flex items-center justify-between mb-2">
-                  <span class="text-[10px] font-bold text-indigo-400 bg-indigo-500/20 px-2 py-0.5 rounded border border-indigo-500/30">${lp.platform}</span>
+                  <span class="text-[10px] font-bold text-indigo-300 bg-indigo-500/20 px-2 py-0.5 rounded border border-indigo-500/30">${lp.platform}</span>
                   <span class="text-[10px] text-slate-400 font-semibold">${lp.difficulty}</span>
                 </div>
-                <h4 class="font-bold text-xs text-slate-900 mb-1 leading-snug">${lp.title}</h4>
+                <h4 class="font-bold text-sm text-slate-100 mb-1 leading-snug">${lp.title}</h4>
                 <p class="text-[11px] text-slate-400 mb-4">Target: <strong class="text-slate-200">${lp.skill}</strong> • Est: ${lp.est_time}</p>
               </div>
-              <a href="${lp.link}" target="_blank" class="w-full py-2.5 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold text-center transition flex items-center justify-center gap-1.5">
+              <a href="${lp.link}" target="_blank" class="w-full py-2.5 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold text-center transition flex items-center justify-center gap-1.5">
                 Start Learning <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
               </a>
             </div>
@@ -350,26 +366,26 @@ window.WixViews = {
       </div>
 
       <!-- SECTION 4: MATCHING INTERNSHIPS & 1-CLICK APPLY -->
-      <div class="glass-panel rounded-3xl p-6 md:p-8 bg-white border border-slate-200">
+      <div class="rounded-3xl p-6 md:p-8 bg-[#0f172a] border border-slate-800">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
           <div>
-            <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
-              <i data-lucide="briefcase" class="w-5 h-5 text-indigo-500"></i> Matching Internships &amp; Placements
+            <h3 class="text-lg font-black text-white flex items-center gap-2">
+              <i data-lucide="briefcase" class="w-5 h-5 text-indigo-400"></i> Matching Internships &amp; Placements
             </h3>
-            <p class="text-xs text-slate-400">Curated opportunities matched against your verified skills</p>
+            <p class="text-xs text-slate-400 mt-1">Curated opportunities matched against your verified skills</p>
           </div>
-          <span class="text-xs font-bold text-indigo-400 bg-indigo-500/20 px-3 py-1 rounded-xl border border-indigo-500/30">
+          <span class="text-xs font-bold text-indigo-300 bg-indigo-500/20 px-3 py-1 rounded-xl border border-indigo-500/30">
             3 High Match Roles
           </span>
         </div>
 
         <div class="space-y-4">
           ${data.opportunities.map(opp => `
-            <div id="opp-card-${opp.id}" class="p-5 rounded-2xl border border-slate-200 hover:border-indigo-500/50 transition bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div id="opp-card-${opp.id}" class="p-5 rounded-2xl border border-slate-700 bg-slate-800/40 hover:border-indigo-500/50 hover:bg-slate-800 transition flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <div class="flex flex-wrap items-center gap-2 mb-1.5">
-                  <h4 class="font-bold text-sm text-slate-900">${opp.job_title}</h4>
-                  <span class="px-2.5 py-0.5 rounded-full text-xs font-black ${opp.match_score >= 80 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                  <h4 class="font-bold text-sm text-white">${opp.job_title}</h4>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-black ${opp.match_score >= 80 ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'}">
                     ${opp.match_score}% Skill Match
                   </span>
                 </div>
@@ -378,12 +394,12 @@ window.WixViews = {
                 </p>
                 <div class="flex flex-wrap gap-1.5">
                   ${opp.required_skills.split(',').map(sk => `
-                    <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 border border-slate-700">${sk.trim()}</span>
+                    <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-700 text-slate-300 border border-slate-600">${sk.trim()}</span>
                   `).join('')}
                 </div>
               </div>
               <div class="flex items-center gap-3">
-                <button id="apply-btn-${opp.id}" onclick="WixViews.openApplyModal(${opp.id}, '${opp.job_title}', '${opp.company_name}', ${opp.match_score})" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition whitespace-nowrap flex items-center gap-1.5">
+                <button id="apply-btn-${opp.id}" onclick="WixViews.openApplyModal(${opp.id}, '${opp.job_title}', '${opp.company_name}', ${opp.match_score})" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md transition whitespace-nowrap flex items-center gap-1.5">
                   <i data-lucide="send" class="w-3.5 h-3.5"></i> Apply Now
                 </button>
               </div>
@@ -401,7 +417,7 @@ window.WixViews = {
     const content = document.getElementById('modal-content');
 
     content.innerHTML = `
-      <div class="relative bg-[#0f172a] rounded-3xl p-8 max-w-lg w-full mx-4 shadow-2xl border border-[#1f293d] text-slate-100">
+      <div class="relative bg-[#0f172a] rounded-3xl p-8 max-w-lg w-full mx-4 shadow-2xl border border-slate-700 text-slate-100">
         <button onclick="SkillBridgeApp.closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white">
           <i data-lucide="x" class="w-6 h-6"></i>
         </button>
@@ -444,7 +460,7 @@ window.WixViews = {
           <button onclick="SkillBridgeApp.closeModal()" class="px-4 py-2.5 rounded-xl text-xs font-bold border border-slate-700 text-slate-300 hover:bg-slate-800">
             Cancel
           </button>
-          <button onclick="WixViews.submitApplication(${jobId}, '${jobTitle}', ${matchScore})" class="px-5 py-2.5 rounded-xl text-xs font-black bg-indigo-600 hover:bg-indigo-700 text-white shadow-md flex items-center gap-2">
+          <button onclick="WixViews.submitApplication(${jobId}, '${jobTitle}', ${matchScore})" class="px-5 py-2.5 rounded-xl text-xs font-black bg-indigo-600 hover:bg-indigo-500 text-white shadow-md flex items-center gap-2">
             <i data-lucide="check-circle" class="w-4 h-4"></i> Submit Application →
           </button>
         </div>
@@ -482,7 +498,7 @@ window.WixViews = {
     }
   },
 
-  // 3. COMPANY DASHBOARD (matching https://vedhagariga896.wixsite.com/skillbridge/company-dashboard)
+  // 3. COMPANY DASHBOARD
   renderCompanyDashboard: async function(container) {
     let data = this.fallbackCompanyData;
 
@@ -497,12 +513,12 @@ window.WixViews = {
 
     container.innerHTML = `
       <!-- Post Your Opportunity Section -->
-      <div class="glass-panel rounded-3xl p-6 md:p-8 mb-8 bg-white border border-slate-200">
+      <div class="rounded-3xl p-6 md:p-8 mb-8 bg-[#0f172a] border border-slate-800">
         <div class="mb-6">
-          <h2 class="text-xl font-black text-slate-900 flex items-center gap-2">
-            <i data-lucide="plus-circle" class="w-5 h-5 text-indigo-500"></i> Post Your Opportunity
+          <h2 class="text-xl font-black text-white flex items-center gap-2">
+            <i data-lucide="plus-circle" class="w-5 h-5 text-indigo-400"></i> Post Your Opportunity
           </h2>
-          <p class="text-xs text-slate-400">
+          <p class="text-xs text-slate-400 mt-1">
             Connect with students and colleges by sharing your job or internship requirements. We'll match your candidates based on their verified skills.
           </p>
         </div>
@@ -511,32 +527,32 @@ window.WixViews = {
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-1">Full name</label>
-              <input id="wix-form-name" type="text" placeholder="e.g. Talent Lead" value="Vikram Malhotra" required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 focus:ring-2 focus:ring-indigo-500">
+              <input id="wix-form-name" type="text" placeholder="e.g. Talent Lead" value="Vikram Malhotra" required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 bg-slate-800 text-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none">
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-1">Company email</label>
-              <input id="wix-form-email" type="email" placeholder="e.g. hr@abctech.com" value="hr@infosys.com" required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 focus:ring-2 focus:ring-indigo-500">
+              <input id="wix-form-email" type="email" placeholder="e.g. hr@abctech.com" value="hr@infosys.com" required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 bg-slate-800 text-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none">
             </div>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-1">Job title</label>
-              <input id="wix-form-title" type="text" placeholder="e.g. Software Developer Intern" value="Junior Cloud Developer" required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 focus:ring-2 focus:ring-indigo-500">
+              <input id="wix-form-title" type="text" placeholder="e.g. Software Developer Intern" value="Junior Cloud Developer" required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 bg-slate-800 text-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none">
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-1">Industry</label>
-              <input id="wix-form-industry" type="text" placeholder="e.g. Software Engineering" value="Information Technology" required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 focus:ring-2 focus:ring-indigo-500">
+              <input id="wix-form-industry" type="text" placeholder="e.g. Software Engineering" value="Information Technology" required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 bg-slate-800 text-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none">
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-300 mb-1">Location</label>
-              <input id="wix-form-location" type="text" placeholder="e.g. Bengaluru (Hybrid)" value="Bengaluru (Hybrid)" required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 focus:ring-2 focus:ring-indigo-500">
+              <input id="wix-form-location" type="text" placeholder="e.g. Bengaluru (Hybrid)" value="Bengaluru (Hybrid)" required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 bg-slate-800 text-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none">
             </div>
           </div>
 
           <div>
             <label class="block text-xs font-bold text-slate-300 mb-1">Job type</label>
-            <select id="wix-form-type" class="w-full text-xs p-2.5 rounded-xl border border-slate-700 focus:ring-2 focus:ring-indigo-500">
+            <select id="wix-form-type" class="w-full text-xs p-2.5 rounded-xl border border-slate-700 bg-slate-800 text-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none">
               <option value="Internship" selected>Internship</option>
               <option value="Full-time">Full-time</option>
               <option value="Part-time">Part-time</option>
@@ -547,7 +563,7 @@ window.WixViews = {
             <label class="block text-xs font-bold text-slate-300 mb-1.5">Required skills</label>
             <div class="flex flex-wrap gap-2 text-xs" id="wix-skills-chips">
               ${['Project Management', 'Communication', 'Leadership', 'Data Analysis', 'Design', 'Marketing', 'Sales', 'Engineering', 'Python', 'React', 'REST API'].map(skill => `
-                <label class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-800 cursor-pointer hover:bg-indigo-950 hover:border-indigo-500 transition">
+                <label class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 cursor-pointer hover:bg-indigo-950 hover:border-indigo-500 hover:text-indigo-300 transition">
                   <input type="checkbox" value="${skill}" ${['Python', 'REST API', 'Engineering'].includes(skill) ? 'checked' : ''} class="accent-indigo-600">
                   <span>${skill}</span>
                 </label>
@@ -557,37 +573,37 @@ window.WixViews = {
 
           <div>
             <label class="block text-xs font-bold text-slate-300 mb-1">Job description</label>
-            <textarea id="wix-form-desc" rows="3" placeholder="Outline the role responsibilities and qualifications..." required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 focus:ring-2 focus:ring-indigo-500">We are seeking proactive engineering students proficient in Python, modern Web APIs, and system fundamentals to work on scalable cloud services.</textarea>
+            <textarea id="wix-form-desc" rows="3" placeholder="Outline the role responsibilities and qualifications..." required class="w-full text-xs p-2.5 rounded-xl border border-slate-700 bg-slate-800 text-slate-100 focus:ring-2 focus:ring-indigo-500 outline-none">We are seeking proactive engineering students proficient in Python, modern Web APIs, and system fundamentals to work on scalable cloud services.</textarea>
           </div>
 
-          <button type="submit" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition">
+          <button type="submit" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md transition">
             Publish Opportunity →
           </button>
         </form>
       </div>
 
       <!-- Applicant Management Section -->
-      <div class="glass-panel rounded-3xl p-6 md:p-8 bg-white border border-slate-200">
+      <div class="rounded-3xl p-6 md:p-8 bg-[#0f172a] border border-slate-800">
         <div class="mb-4">
-          <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
-            <i data-lucide="users" class="w-5 h-5 text-indigo-500"></i> Applicant Management
+          <h3 class="text-lg font-black text-white flex items-center gap-2">
+            <i data-lucide="users" class="w-5 h-5 text-indigo-400"></i> Applicant Management
           </h3>
-          <p class="text-xs text-slate-400">
+          <p class="text-xs text-slate-400 mt-1">
             Review and shortlist candidates based on their skill match percentage for your latest openings.
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           ${data.applicants.map(app => `
-            <div class="p-4 rounded-2xl border border-slate-200 bg-slate-50/50 flex flex-col justify-between">
+            <div class="p-4 rounded-2xl border border-slate-700 bg-slate-800/50 flex flex-col justify-between">
               <div>
-                <h4 class="font-bold text-sm text-slate-900">${app.name}</h4>
+                <h4 class="font-bold text-sm text-white">${app.name}</h4>
                 <p class="text-[11px] text-slate-400 mb-2">${app.applied_role} • ${app.college || 'IIT Bombay'}</p>
-                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-black bg-emerald-100 text-emerald-800 mb-3">
+                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-black bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 mb-3">
                   ${app.match_score}% Skill Match
                 </span>
               </div>
-              <button onclick="WixViews.updateStatus(${app.id}, 'Shortlisted')" class="w-full py-2 rounded-xl bg-slate-800 border border-slate-700 text-slate-200 font-bold text-xs hover:bg-emerald-950 hover:border-emerald-500 hover:text-emerald-300 transition">
+              <button onclick="WixViews.updateStatus(${app.id}, 'Shortlisted')" class="w-full py-2 rounded-xl bg-slate-700 border border-slate-600 text-slate-200 font-bold text-xs hover:bg-emerald-950 hover:border-emerald-600 hover:text-emerald-300 transition">
                 ${app.status} ✓
               </button>
             </div>
@@ -640,7 +656,7 @@ window.WixViews = {
     SkillBridgeApp.showToast(`Candidate status updated to ${newStatus}`, "info");
   },
 
-  // 4. COLLEGE DASHBOARD (matching https://vedhagariga896.wixsite.com/skillbridge/college-dashboard)
+  // 4. COLLEGE DASHBOARD
   renderCollegeDashboard: async function(container) {
     let data = this.fallbackCollegeData;
 
@@ -655,33 +671,33 @@ window.WixViews = {
 
     container.innerHTML = `
       <!-- Placement Analytics -->
-      <div class="glass-panel rounded-3xl p-6 md:p-8 mb-8 bg-white border border-slate-200">
+      <div class="rounded-3xl p-6 md:p-8 mb-8 bg-[#0f172a] border border-slate-800">
         <div class="mb-6">
-          <h2 class="text-xl font-black text-slate-900 flex items-center gap-2">
-            <i data-lucide="bar-chart-2" class="w-5 h-5 text-indigo-500"></i> Placement Analytics
+          <h2 class="text-xl font-black text-white flex items-center gap-2">
+            <i data-lucide="bar-chart-2" class="w-5 h-5 text-indigo-400"></i> Placement Analytics
           </h2>
-          <p class="text-xs text-slate-400">
+          <p class="text-xs text-slate-400 mt-1">
             Real-time data on student readiness and industry alignment across our global network.
           </p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="p-5 rounded-2xl bg-slate-50/50 border border-slate-200">
+          <div class="p-5 rounded-2xl bg-slate-800/60 border border-slate-700">
             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Students Assessed</span>
             <div class="text-3xl font-black text-slate-100 mt-1">${data.metrics.students_assessed}</div>
           </div>
 
-          <div class="p-5 rounded-2xl bg-slate-50/50 border border-slate-200">
+          <div class="p-5 rounded-2xl bg-emerald-950/30 border border-emerald-700/30">
             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Placement Ready</span>
             <div class="text-3xl font-black text-emerald-400 mt-1">${data.metrics.placement_ready}</div>
           </div>
 
-          <div class="p-5 rounded-2xl bg-slate-50/50 border border-slate-200">
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Top Skill Gaps</span>
+          <div class="p-5 rounded-2xl bg-amber-950/30 border border-amber-700/30">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Top Skill Gap</span>
             <div class="text-2xl font-black text-amber-400 mt-1">${data.metrics.top_skill_gap}</div>
           </div>
 
-          <div class="p-5 rounded-2xl bg-slate-50/50 border border-slate-200">
+          <div class="p-5 rounded-2xl bg-indigo-950/30 border border-indigo-700/30">
             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Internship Matches</span>
             <div class="text-3xl font-black text-indigo-400 mt-1">${data.metrics.internship_matches}</div>
           </div>
@@ -689,24 +705,24 @@ window.WixViews = {
       </div>
 
       <!-- Top Skill Gaps -->
-      <div class="glass-panel rounded-3xl p-6 md:p-8 bg-white border border-slate-200">
+      <div class="rounded-3xl p-6 md:p-8 bg-[#0f172a] border border-slate-800">
         <div class="mb-4">
-          <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
-            <i data-lucide="alert-circle" class="w-5 h-5 text-amber-500"></i> Top Skill Gaps in Academia
+          <h3 class="text-lg font-black text-white flex items-center gap-2">
+            <i data-lucide="alert-circle" class="w-5 h-5 text-amber-400"></i> Top Skill Gaps in Academia
           </h3>
-          <p class="text-xs text-slate-400">
+          <p class="text-xs text-slate-400 mt-1">
             Identify the most critical skills students are missing to bridge the gap between academia and industry.
           </p>
         </div>
 
         <div class="space-y-4">
           ${data.skill_gaps.map(sg => `
-            <div class="p-4 rounded-2xl border border-slate-200 bg-slate-50/50">
+            <div class="p-4 rounded-2xl border border-slate-700 bg-slate-800/50">
               <div class="flex justify-between items-center mb-1.5">
                 <span class="font-bold text-sm text-slate-100">${sg.skill}</span>
                 <span class="text-xs font-bold text-indigo-400">${sg.students_affected} Students Affected (${sg.percentage}%)</span>
               </div>
-              <div class="w-full bg-slate-800 rounded-full h-2 mb-2">
+              <div class="w-full bg-slate-700 rounded-full h-2 mb-2">
                 <div class="bg-indigo-500 h-2 rounded-full" style="width: ${sg.percentage}%"></div>
               </div>
               <p class="text-xs text-slate-400">${sg.description}</p>
