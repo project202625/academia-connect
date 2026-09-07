@@ -924,6 +924,15 @@ Projects:
 
   handleSkillAction: function(action) {
     if (!action) return;
+
+    // Reset dropdown select back to title option
+    const select = document.getElementById('student-skill-actions');
+    if (select) select.selectedIndex = 0;
+
+    // Navigate to student dashboard view first so profile is active
+    this.navigateTo('student-dashboard');
+
+    // Open requested interactive tool modal
     if (action === 'enter_skill') {
       this.openEnterSkillsModal();
     } else if (action === 'take_test') {
